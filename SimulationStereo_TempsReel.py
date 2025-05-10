@@ -156,14 +156,18 @@ with stream:
         
         ret,frame=cap.read()
         audio_processor.x,audio_processor.y,startX,startY,endX,endY=Face_Position(frame)
+        # Frame video
         frame_resize=cv2.resize(frame,(Height, Weight),interpolation=cv2.INTER_CUBIC)
         cv2.rectangle(frame_resize, (startX, startY), (endX, endY), (255, 0, 0), 2) # Blue color for faces
         cv2.imshow('frame',frame_resize)
-        """canva_copy=canvas.copy()
+
+        #Frame position dans la salle par rapport au micro
+        canva_copy=canvas.copy()
         source_x = int(audio_processor.x * longueur * scale)
         source_y = int(audio_processor.y* largeur * scale)
         cv2.circle(canva_copy, (source_x, source_y), 6, (0, 255, 0), -1)
-        cv2.imshow('canvas',canva_copy)"""
+        cv2.imshow('canvas',canva_copy)
+
         if cv2.waitKey(1) & 0xFF==ord('q'):
             break
             
