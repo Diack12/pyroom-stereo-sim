@@ -59,11 +59,7 @@ cd pyroom-stereo-sim
 pip install -r requirements.txt
 ```
 
-Si tu n'as pas de `requirements.txt`, voici les principaux :
 
-```bash
-pip install opencv-python sounddevice numpy pyroomacoustics cvlib moviepy
-```
 
 3. Lancer un des deux scripts :
 
